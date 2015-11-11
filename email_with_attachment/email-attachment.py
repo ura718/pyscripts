@@ -22,8 +22,8 @@ from smtplib import SMTP
 
 msg = MIMEMultipart()
 msg['Subject'] = 'Hello'
-msg['From'] = 'ym26@nyu.edu'
-msg['To'] = 'ym26@nyu.edu'
+msg['From'] = 'some_user1@nyu.edu'
+msg['To'] = 'some_user2@nyu.com'
 
 
 
