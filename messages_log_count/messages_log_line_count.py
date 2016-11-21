@@ -32,8 +32,8 @@ data = []
 
 for i in f_lines:
 
-  # The First join takes a line that is in list format and takes up to 2 columns 0,1 and joins it with spaces (e.g: Nov 20)
-  # The Second join takes a line that is in list format and takes a third column, splits it against colon (:) and takes first 2 columns and joins them with a colon(:) again (e.g 22:35:00 -> 22:35)
+  # The First join takes a line in list format, removes newline, extracts first 2 columns 0,1 and joins it with spaces (e.g: "Nov 20 22:35:00 somehost snmpd[2334]: Connection from UDP:" -> Nov 20)
+  # The Second join takes the same line that is in list format, removes newline, takes a third column (time), splits it by colon (:), extracts first 2 columns (hour,minute), joins them back with a colon(:). (e.g 22:35:00 -> 22:35)
   # Then we take the First join and concatenate it with Second join. We can concatenate only str() types and so when you do a join it converts a list into a str() automatically.
 
   data.append(' '.join(i.strip('\n').split()[0:2]) + ' ' + ':'.join((i.strip('\n').split()[2]).split(':')[0:2]))
