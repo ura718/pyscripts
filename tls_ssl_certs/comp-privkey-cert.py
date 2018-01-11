@@ -60,14 +60,6 @@ for key,value in Certs.iteritems():
   c_md5, c_md5err = p2.communicate()
   c_md5 = c_md5.split()[1]
 
-  '''
-  if k_md5 == c_md5:
-    print "[+] %s: %s  -- match" % (key,k_md5)
-    print "[+] %s: %s  -- match" % (value,c_md5)
-  elif k_md5 != c_md5:
-    print "[-] %s: %s  -- no match" % (key,k_md5)
-    print "[-] %s: %s  -- no match" % (value,c_md5)
-  '''  
 
   if k_md5 == c_md5:
     print "[+] {0:77}: {1:32}  -- match".format(key,k_md5)
